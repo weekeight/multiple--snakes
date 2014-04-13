@@ -25,34 +25,11 @@
     <!-- 当用户使用全屏浏览时，将状态条设置为黑色 -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-    <style type="text/css">
-    body{
-        width: 100%;
-        height: 100%;
-        background: url(./images/bg.jpg) no-repeat;
-    }
-    p.topHead{
-        text-align: center;
-        color: #1ACF29;
-        margin-top: 30px;
-        font-size: 21px;
-    }
-    #main{
-        text-align: center;
-    }
-    #main p{
-        margin-top: 150px;
-        font-size: 18px;
-        color: #45B34A;
-    }
-    #main #sendInfo{
-        position: relative;
-        left: -70px;
-    }
-    </style>
+    <link rel="stylesheet" href="./style/main.css" />
     <script src="/socket.io/socket.io.js"></script>
     <script src="http://g.tbcdn.cn/kissy/m/0.2.0/mini-full-min.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/snake.js"></script>
 </head>
 <body>
 
@@ -64,6 +41,18 @@
         <label for="key">RKey:</label>
         <input id="key" width="180px" type="text" /> <br/>
         <button id="sendInfo">send</button>
+    </div>
+    <div id="playgame">
+        <canvas id="main-canvas" width="100%"></canvas>
+        <div id="control">
+            <a class="up" direction="up">U</a>
+            <a class="right" direction="right">R</a>
+            <a class="down" direction="down">D</a>
+            <a class="left" direction="left">L</a>
+        </div>
+        <div id="msg">
+            <p id="content"></p>
+        </div>
     </div>
 </body>
 </html>
